@@ -23,6 +23,7 @@ from libcloud.common.types import LibcloudError, InvalidCredsError
 from libcloud.compute.types import NodeState
 from libcloud.compute.base import NodeImage, NodeSize, NodeAuthPassword, NodeAuthSSHKey
 
+from .vbox import VBoxDriver
 from .vmware import VMWareDriver
 from .bigv import BigVNodeDriver
 from .docker import DockerNodeDriver
@@ -57,6 +58,7 @@ class Compute(base.GraphExternalAction):
         "VMWARE": VMWareDriver,
         "BIGV": BigVNodeDriver,
         "DOCKER": DockerNodeDriver,
+        "VBOX": VBoxDriver,
     }
 
     def __init__(self, node):
